@@ -2,52 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Expense Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elegant E-Commerce</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <div class="main-container">
-    <div class="container">
-      <h2>💰 Expense Tracker</h2>
-
-      <div id="auth-section">
-        <input type="text" id="username" placeholder="Enter username" />
-        <button id="login-btn">Login</button>
-      </div>
-
-      <div id="tracker-section" class="hidden">
-        <div class="balance">
-          <h3>Balance: ₹<span id="balance">0</span></h3>
-          <div class="summary">
-            <div class="income">Income <br/> ₹<span id="income">0</span></div>
-            <div class="expense">Expense <br/> ₹<span id="expense">0</span></div>
+  <header>
+    <nav>
+      <div class="logo">E-Shop</div>
+      <div class="nav-links">
+        <div class="dropdown">
+          <button class="dropbtn">Categories ▾</button>
+          <div class="dropdown-content">
+            <a href="#electronics">Electronics</a>
+            <a href="#fashion">Fashion</a>
+            <a href="#home">Home Decor</a>
+            <a href="#fitness">Fitness</a>
+            <a href="#books">Books</a>
           </div>
         </div>
+        <input type="text" id="searchInput" placeholder="Search products..." />
+      </div>
+    </nav>
+  </header>
 
-        <form id="transaction-form">
-          <input type="text" id="desc" placeholder="Description" required />
-          <input type="number" id="amount" placeholder="Amount (positive = income, negative = expense)" required />
-          <select id="category">
-            <option value="General">General</option>
-            <option value="Food">Food</option>
-            <option value="Travel">Travel</option>
-            <option value="Shopping">Shopping</option>
-            <option value="Bills">Bills</option>
-          </select>
-          <button type="submit">Add Transaction</button>
-        </form>
+  <section class="hero">
+    <h1>Discover Your Style, Shop Smart</h1>
+    <p>Top Categories Curated For You</p>
+  </section>
 
-        <ul id="transaction-list"></ul>
+  <section id="products">
+    <h2>All Products</h2>
+
+    <!-- Category Sections -->
+    <div class="category" id="electronics">
+      <h3>Electronics</h3>
+      <div class="product-grid">
+        <div class="product" data-name="Smartphone"><img src="https://via.placeholder.com/300" alt=""><h4>Smartphone</h4><p>$699</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Laptop"><img src="https://via.placeholder.com/300" alt=""><h4>Laptop</h4><p>$999</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Smartwatch"><img src="https://via.placeholder.com/300" alt=""><h4>Smartwatch</h4><p>$199</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Headphones"><img src="https://via.placeholder.com/300" alt=""><h4>Headphones</h4><p>$129</p><button>Add to Cart</button></div>
       </div>
     </div>
 
-    <div class="chart-container">
-      <h3>📊 Income vs Expense</h3>
-      <canvas id="expenseChart"></canvas>
+    <div class="category" id="fashion">
+      <h3>Fashion</h3>
+      <div class="product-grid">
+        <div class="product" data-name="T-Shirt"><img src="https://via.placeholder.com/300" alt=""><h4>T-Shirt</h4><p>$25</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Jeans"><img src="https://via.placeholder.com/300" alt=""><h4>Jeans</h4><p>$49</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Jacket"><img src="https://via.placeholder.com/300" alt=""><h4>Jacket</h4><p>$89</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Sneakers"><img src="https://via.placeholder.com/300" alt=""><h4>Sneakers</h4><p>$79</p><button>Add to Cart</button></div>
+      </div>
     </div>
-  </div>
+
+    <div class="category" id="home">
+      <h3>Home Decor</h3>
+      <div class="product-grid">
+        <div class="product" data-name="Vase"><img src="https://via.placeholder.com/300" alt=""><h4>Vase</h4><p>$18</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Lamp"><img src="https://via.placeholder.com/300" alt=""><h4>Lamp</h4><p>$45</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Wall Art"><img src="https://via.placeholder.com/300" alt=""><h4>Wall Art</h4><p>$60</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Cushion Set"><img src="https://via.placeholder.com/300" alt=""><h4>Cushion Set</h4><p>$35</p><button>Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="category" id="fitness">
+      <h3>Fitness</h3>
+      <div class="product-grid">
+        <div class="product" data-name="Dumbbells"><img src="https://via.placeholder.com/300" alt=""><h4>Dumbbells</h4><p>$40</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Yoga Mat"><img src="https://via.placeholder.com/300" alt=""><h4>Yoga Mat</h4><p>$25</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Resistance Bands"><img src="https://via.placeholder.com/300" alt=""><h4>Resistance Bands</h4><p>$15</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Kettlebell"><img src="https://via.placeholder.com/300" alt=""><h4>Kettlebell</h4><p>$35</p><button>Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="category" id="books">
+      <h3>Books</h3>
+      <div class="product-grid">
+        <div class="product" data-name="Mystery Novel"><img src="https://via.placeholder.com/300" alt=""><h4>Mystery Novel</h4><p>$12</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Biography"><img src="https://via.placeholder.com/300" alt=""><h4>Biography</h4><p>$18</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Self Help"><img src="https://via.placeholder.com/300" alt=""><h4>Self Help</h4><p>$20</p><button>Add to Cart</button></div>
+        <div class="product" data-name="Cookbook"><img src="https://via.placeholder.com/300" alt=""><h4>Cookbook</h4><p>$22</p><button>Add to Cart</button></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 E-Shop. All rights reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
